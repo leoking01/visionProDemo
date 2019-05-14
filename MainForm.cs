@@ -40,7 +40,7 @@ namespace VproTest
         private void MainForm_Load(object sender, EventArgs e)
         {
             m_tb = new CogToolBlock();
-            m_tb = (CogToolBlock)CogSerializer.LoadObjectFromFile(Application.StartupPath + "\\TestMY.vpp");
+            m_tb = (CogToolBlock)CogSerializer.LoadObjectFromFile(Application.StartupPath + "/../..\\demo.vpp");
         }
 
         private void btn_edittoolblock_Click(object sender, EventArgs e)
@@ -64,27 +64,8 @@ namespace VproTest
 
                 textBox1.Text = m_tb.Outputs["Results_Item_0_Score"].Value.ToString();
                 double angle = (double)m_tb.Outputs["Results_Item_0_GetPose_Rotation"].Value;
-                //angle = angle * 180 / Math.PI;
-
-                textBox2.Text = angle.ToString();
-                textBox3.Text = m_tb.Outputs["Results_Item_0_GetPose_TranslationY"].Value.ToString();
+                //  angle = angle * 180 / Math.PI;
             }
-
-
-            //if (false)
-            //{
-            //    m_tb.Inputs["OutputImage"].Value = m_Image;
-            //    m_tb.Run();
-            //    cogRecordDisplay1.Image = m_Image;
-            //    cogRecordDisplay1.Record = m_tb.CreateLastRunRecord().SubRecords[0];
-            //    cogRecordDisplay1.Fit();
-            //    textBox1.Text = m_tb.Outputs["Num"].Value.ToString();
-            //    double angle = (double)m_tb.Outputs["Angle"].Value;
-            //    angle = angle * 180 / Math.PI;
-            //    textBox2.Text = angle.ToString();
-            //    textBox3.Text = m_tb.Outputs["Distance"].Value.ToString();
-            //}
-
         }
     }
 }
