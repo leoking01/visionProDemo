@@ -200,7 +200,7 @@ namespace VproTest
             //CogIPOneImageTool imageCtrl_02 = (CogIPOneImageTool)mToolBlock.Tools["CogIPOneImageTool2"];
             CogRectangle rt = new CogRectangle();
             rt.SetCenterWidthHeight(0, 0, image8.Width * 3, image8.Height * 3);
-            CogImage8Grey m_gray = rt.CreateRLE(1, 0).CreateImage8Grey();
+            CogImage8Grey m_gray = rt.CreateRLE( 128, 0).CreateImage8Grey();
             //imageCtrl_02.InputImage = m_gray;
 
 
