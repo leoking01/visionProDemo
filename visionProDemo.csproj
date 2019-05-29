@@ -106,8 +106,6 @@
     </Reference>
     <Reference Include="Cognex.VisionPro3D" />
     <Reference Include="Cognex.VisionPro3D.Core" />
-    <Reference Include="Cognex.VisionPro3D.Display.Controls" />
-    <Reference Include="Cognex.VisionPro3D.Graphic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="QWhale.Common, Version=1.62.4104.36375, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
@@ -123,7 +121,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
