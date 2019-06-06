@@ -13,7 +13,8 @@ using Cognex.VisionPro.ToolBlock;
 using Cognex.VisionPro;
 
 
- using Cognex.VisionPro;
+using Cognex.VisionPro;
+using Cognex.VisionPro.ImageProcessing;
 
 namespace VproTest
 {
@@ -24,8 +25,6 @@ namespace VproTest
         public MainForm(   )
         {
              InitializeComponent();
-
-
         }
 
         private void btn_openimage_Click(object sender, EventArgs e)
@@ -47,11 +46,10 @@ namespace VproTest
             string nameOfVpp = Application.StartupPath + "\\..\\..\\..\\demo.vpp";
             m_tb = (CogToolBlock)CogSerializer.LoadObjectFromFile(nameOfVpp);
 
-
-
-
             CogImageFile imagefile = new CogImageFile();
             imagefile.Open(Application.StartupPath + "/../../../in/bracket_std.idb", CogImageFileModeConstants.Read);
+
+            //imagefile.IsSynchronized ;//();
             //m_Image = 
             CogToolCollection tbTc = m_tb.Tools;
             //tbTc.
@@ -61,7 +59,7 @@ namespace VproTest
 
         private void btn_edittoolblock_Click(object sender, EventArgs e)
         {
-            TooblockForm dlg = new TooblockForm();
+            TooblockForm dlg = new TooblockForm(  );
             dlg.tb = m_tb;
             dlg.ShowDialog();
         }
@@ -71,6 +69,7 @@ namespace VproTest
             if (true)
             {
                 m_tb.Inputs["OutputImage"].Value = m_Image;
+                //m_tb.Inputs["InputImage"].Value = m_Image;
                 m_tb.Run();
 
                 cogRecordDisplay1.Image = m_Image;
@@ -84,7 +83,7 @@ namespace VproTest
             }
         }
 
-        private void 学习roi设置方法ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void studyRroiSettingMethodToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             //InitializeFifo();
@@ -96,8 +95,6 @@ namespace VproTest
                 bbb();  //  错误演示-- 未将对象引用设置到对象的实例” 
             }
         }
-
-
 
 #region  JJJ
         private CogFrameGrabbers myFrameGrabbers;
@@ -119,10 +116,6 @@ namespace VproTest
                 ROIParams.SetROIXYWidthHeight(10, 20, 300, 200);
         }
 #endregion
-
-
-
-
 
         public string[ ] c;
 
@@ -150,8 +143,6 @@ namespace VproTest
 
         private void 研究图像缝合ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             CogImageFile imagefile_0 = new CogImageFile();
             imagefile_0.Open(Application.StartupPath + "/../../../street/street_0.bmp", CogImageFileModeConstants.Read);
             CogImage24PlanarColor image_24_0 = new CogImage24PlanarColor();
@@ -171,7 +162,6 @@ namespace VproTest
             CogImage24PlanarColor image_24_2 = new CogImage24PlanarColor();
             image_24_2 = (CogImage24PlanarColor)imagefile_2[0];
             CogImage8Grey imageGray8_2 = CogImageConvert.GetIntensityImage(image_24_2, 0, 0, image_24_2.Width, image_24_2.Height);
-
 
 
             // 灰度图像 
@@ -227,6 +217,17 @@ namespace VproTest
 
             stt.FillDestinationImageFromBuffer(  m_gray   );
             //    BlendImageIntoBuffer(  CogImage8Grey, CogImage8Grey, CogImage8Grey, Int32, Int32 )
+
+
+            //   
+            CogCopyRegionTool ccft = new CogCopyRegionTool();
+
+
+            //switch (  true )
+            //{
+            //case :
+            //    break;
+            //}
 
 
             cogRecordDisplay1.Image = m_gray;

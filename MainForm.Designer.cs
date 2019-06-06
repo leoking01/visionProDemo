@@ -123,7 +123,7 @@
             this.学习roi设置方法ToolStripMenuItem.Name = "学习roi设置方法ToolStripMenuItem";
             this.学习roi设置方法ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.学习roi设置方法ToolStripMenuItem.Text = "学习roi设置方法";
-            this.学习roi设置方法ToolStripMenuItem.Click += new System.EventHandler(this.学习roi设置方法ToolStripMenuItem_Click);
+            this.学习roi设置方法ToolStripMenuItem.Click += new System.EventHandler(this.studyRroiSettingMethodToolStripMenuItem_Click);
             // 
             // 研究图像缝合ToolStripMenuItem
             // 
